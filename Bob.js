@@ -15,8 +15,6 @@ class Bob {
     }
     display(){
         var pos = this.body.position;
-        this.body.position.x = mouseX;
-        this.body.position.y = mouseY;
         push ()
         translate(pos.x,pos.y);
         rotate (this.body.angle)
