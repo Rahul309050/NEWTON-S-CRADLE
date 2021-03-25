@@ -14,7 +14,7 @@ function preload()
 }
 
 function setup() {
-	createCanvas(1500, 1200);
+	createCanvas(1500, 1000);
 
 
 	engine = Engine.create();
@@ -44,26 +44,51 @@ function draw() {
   rectMode(CENTER);
   background(230);
   
-  drawSprites();
+  
   bobObject1.display();
   bobObject2.display();
   bobObject3.display();
   bobObject4.display();
   bobObject5.display();
-
+  
   ground.display();
   sling1.display();
   sling2.display();
   sling3.display();
   sling4.display();
   sling5.display();
-
-}function keyPressed() { 
-	if (keyCode === UP_ARROW||touches.length > 0) 
+ 
+  drawSprites();
+ 
+}
+function keyPressed() { 
+	if (keyCode === 37) 
 	{ Matter.Body.applyForce(bobObject1.body,bobObject1.body.position,{x:-100,y:-100}); 
-  touches = [];
+
 } 
+
+if (keyCode === 39) 
+	{ Matter.Body.applyForce(bobObject2.body,bobObject2.body.position,{x:-100,y:-100}); 
+  Matter.Body.applyForce(bobObject1.body,bobObject1.body.position,{x:-100,y:-100}); 
+
 } 
+if (keyCode === 40) 
+	{ Matter.Body.applyForce(bobObject2.body,bobObject2.body.position,{x:-100,y:-100}); 
+  Matter.Body.applyForce(bobObject1.body,bobObject1.body.position,{x:-100,y:-100}); 
+  Matter.Body.applyForce(bobObject3.body,bobObject3.body.position,{x:-100,y:-100}); 
+
+} 
+f (keyCode === UP_ARROW) 
+	{ Matter.Body.applyForce(bobObject2.body,bobObject2.body.position,{x:-100,y:-100}); 
+  Matter.Body.applyForce(bobObject1.body,bobObject1.body.position,{x:-100,y:-100}); 
+  Matter.Body.applyForce(bobObject3.body,bobObject3.body.position,{x:-100,y:-100}); 
+  Matter.Body.applyForce(bobObject4.body,bobObject4.body.position,{x:-100,y:-100}); 
+
+} 
+}
+
+
+
 
 
 
